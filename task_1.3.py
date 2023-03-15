@@ -13,8 +13,8 @@ Months = [
     ['Ноябрь', 30],
     ['Декабрь', 31]
     ]
-# Введите номер месяца:
-month_number = 2
+search = input('Введите номер месяца: ')
+month_number = int(search)
 if month_number >= 1 and month_number <= 12:
     print('Вы ввели ', Months[month_number - 1][0], '. ',Months[month_number - 1][1], ' дней')
 else:
