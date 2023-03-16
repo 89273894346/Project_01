@@ -14,12 +14,18 @@ store = {
     '100000224': [{'quantity': 61, 'price': 438}, {'quantity': 23, 'price': 302},  {'quantity': 50, 'price': 412}],
     '100000280': [{'quantity': 26, 'price': 175}, ]
 }
+
+quantity_total = 0
+cost_total = 0
 for name_tip in titles:
-    # key = name_tip
     articul = titles[name_tip]
     list_info = store[articul]
     for element in list_info:
-        quantity_1 = element['quantity']
-        price_1 = element['price']
-        volume = quantity_1 * price_1
-        print(name_tip, ' - ', quantity_1, ' шт., стоимость ', volume, ' руб.')
+        quantity = element['quantity']
+        price = element['price']
+        cost = quantity * price
+        quantity_total = quantity + quantity_total
+        cost_total = cost + cost_total
+    print(name_tip, ' - ', quantity_total, ' шт., стоимость ', cost_total, ' руб.')
+    quantity_total = 0
+    cost_total = 0
