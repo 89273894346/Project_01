@@ -1,21 +1,15 @@
 # Задача 1.3.
-Months = [
-    ['Январь', 31], 
-    ['Февраль', 28],
-    ['Март', 31],
-    ['Апрель', 30],
-    ['Май', 31],
-    ['Июнь', 30],
-    ['Июль', 31],
-    ['Август', 31],
-    ['Сентябрь', 30],
-    ['Октябрь', 31],
-    ['Ноябрь', 30],
-    ['Декабрь', 31]
-    ]
+
+import datetime
 search = input('Введите номер месяца: ')
 month_number = int(search)
 if month_number >= 1 and month_number <= 12:
-    print('Вы ввели ', Months[month_number - 1][0], '. ',Months[month_number - 1][1], ' дней')
+    if month_number in [1, 3, 5, 7, 8, 10, 12]:
+        days = 31
+    elif month_number in [4, 6, 9, 11]:
+        days = 30
+    elif month_number == 2:
+        days = 28    
+    print('Вы ввели ', datetime.date(2023, month_number, 1).strftime('%B'), '. ', days, ' дней')
 else:
     print('Такого месяца нет!')
