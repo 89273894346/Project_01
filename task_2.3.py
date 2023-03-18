@@ -4,8 +4,6 @@ def switch_it_up(number):
         3 : 'Three', 4 : 'Four', 5 : 'Five',
         6 : 'Six', 7 : 'Seven', 8 : 'Eight', 9 : 'Nine'
         }
-    # number_dict.get(number, None)
-
     print(number_dict.get(number, None)) 
 
 search = input('Введите цифру: ')
